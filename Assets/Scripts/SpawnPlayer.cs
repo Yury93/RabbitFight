@@ -1,4 +1,5 @@
 using Photon.Pun;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ public class SpawnPlayer : MonoBehaviour
     public List<GameObject> PlayersList => players;
     private bool findPlayer;
     private PhotonView view;
+    public Action OnUpdateListPlayer;
+    [SerializeField] private Text txtSearchPlayers;
     private void Start()
     {
         view = GetComponent<PhotonView>();
@@ -20,7 +23,7 @@ public class SpawnPlayer : MonoBehaviour
     public void CreatePlayer()
     {
         view.RPC("Find", RpcTarget.All);
-        PhotonNetwork.Instantiate(player.name, posSpawn[Random.Range(0,posSpawn.Length)].position, Quaternion.identity);
+        PhotonNetwork.Instantiate(player.name, posSpawn[UnityEngine.Random.Range(0,posSpawn.Length)].position, Quaternion.identity);
         createButton.gameObject.SetActive(false);
     }
     [PunRPC]
@@ -49,8 +52,17 @@ public class SpawnPlayer : MonoBehaviour
             {
                 print(players[i].gameObject.GetComponent<PhotonView>().OwnerActorNr);
             }
-
+            OnUpdateListPlayer?.Invoke();
             findPlayer = false;
+        }
+        if(players.Count < 2)
+        {
+            txtSearchPlayers.gameObject.SetActive(true);
+            txtSearchPlayers.text = "Waiting for the other players!";
+        }
+        else
+        {
+            txtSearchPlayers.gameObject.SetActive(false);
         }
     }
 }

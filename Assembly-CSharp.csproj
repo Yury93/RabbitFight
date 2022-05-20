@@ -68,30 +68,54 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatAppIdCheckerUI.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\AppSettingsExtensions.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\NamePickGui.cs" />
+    <Compile Include="Assets\Scripts\PlayerAnimationController.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChannelSelector.cs" />
     <Compile Include="Assets\Scripts\Destructible.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\IgnoreUiRaycastWhenInactive.cs" />
+    <Compile Include="Assets\Scripts\SceneController.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
+    <Compile Include="Assets\Scripts\Banana.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\FriendItem.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\PhotonScripts\PhotonManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerUi.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
+    <Compile Include="Assets\Scripts\SpawnBanana.cs" />
     <Compile Include="Assets\Scripts\SpawnPlayer.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\PlayerAnimationController.cs" />
-    <Compile Include="Assets\Scripts\PlayerUi.cs" />
+    <Compile Include="Assets\Art\Unity UI Samples\Scripts\DropMe.cs" />
+    <Compile Include="Assets\Art\Unity UI Samples\Scripts\ResizePanel.cs" />
+    <Compile Include="Assets\Art\Unity UI Samples\Scripts\ShowSliderValue.cs" />
+    <Compile Include="Assets\Art\Unity UI Samples\Scripts\ChangeColor.cs" />
+    <Compile Include="Assets\Art\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
+    <Compile Include="Assets\Art\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\Art\Unity UI Samples\Scripts\PanelManager.cs" />
+    <Compile Include="Assets\Art\Unity UI Samples\Scripts\DragPanel.cs" />
+    <Compile Include="Assets\Art\Unity UI Samples\Scripts\DragMe.cs" />
+    <Compile Include="Assets\Art\Unity UI Samples\Scripts\TiltWindow.cs" />
+    <Compile Include="Assets\Art\Unity UI Samples\Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\Boxing Ring Large\prefabs\RotateObj.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\WalkAudio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.xml" />
     <None Include="Assets\Photon\PhotonUnityNetworking\changelog.txt" />
+    <None Include="Assets\BOXOPHOBIC\Skybox Cubemap Extended\Core\Shaders\Skybox Cubemap Extended.shader" />
+    <None Include="Assets\Art\Unity UI Samples\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\Photon\PhotonLibs\WebSocket\websocket-sharp.dll" />
+    <None Include="Assets\Art\Unity UI Samples\Materials\UI-Default-No-Alpha.shader" />
+    <None Include="Assets\BOXOPHOBIC\Skybox Cubemap Extended\Core\Shaders\Skybox Cubemap Blend.shader" />
     <None Include="Assets\Photon\PhotonLibs\changes-library.txt" />
     <None Include="Assets\Photon\PhotonUnityNetworking\readme.txt" />
     <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll" />
+    <None Include="Assets\Art\Unity UI Samples\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.dll" />
     <None Include="Assets\Photon\PhotonLibs\Metro\Photon3Unity3D.dll" />
+    <None Include="Assets\FoodAndGrocery\Info.txt" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
     <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
   </ItemGroup>
@@ -770,6 +794,18 @@
     <ProjectReference Include="PhotonUnityNetworking.Utilities.Culling.Editor.csproj">
       <Project>{96B8A5F2-B3C3-B144-BB6D-76C2850C87CC}</Project>
       <Name>PhotonUnityNetworking.Utilities.Culling.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.SkyboxCubemapExtended.Editor.csproj">
+      <Project>{6CC6F87E-8707-30CE-BF92-B38DDB053097}</Project>
+      <Name>Boxophobic.SkyboxCubemapExtended.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
+      <Project>{9AC6C857-0496-A3A6-767D-76872B0D15BA}</Project>
+      <Name>Boxophobic.Utils.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Scripts.csproj">
+      <Project>{6CE97AA3-AE85-EB40-3B15-81FA96AC92A6}</Project>
+      <Name>Boxophobic.Utils.Scripts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

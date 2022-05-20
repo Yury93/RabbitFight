@@ -7,6 +7,7 @@ public class PlayerAnimationController : MonoBehaviourPunCallbacks
     private Player player;
     private PlayerController playerController;
     private Animator animator;
+    public Animator Anim => animator;
     readonly int hashIdle = Animator.StringToHash("Idle");
     readonly int hashRun = Animator.StringToHash("Run");
 
@@ -95,6 +96,16 @@ public class PlayerAnimationController : MonoBehaviourPunCallbacks
                 break;
             default:
                 break;
+        }
+    }
+    public void Damage()
+    {
+        animator.SetBool("Damage", true);
+        StartCoroutine(CorReturnIdle());
+        IEnumerator CorReturnIdle()
+        {
+            yield return new WaitForSeconds(1f);
+            animator.SetBool("Damage", false);
         }
     }
 }

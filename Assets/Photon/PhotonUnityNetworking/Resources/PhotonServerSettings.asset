@@ -43,6 +43,13 @@ MonoBehaviour:
   - AnimatorController
   - RPC_DestroyGo
   - RPC_Attack
+  - RPC_UpdateTxtHp
+  - RPC_HpTxt
+  - RPC_hpUpdate
+  - RPC_UpdateHpTxt
+  - RPC_Destroy
+  - SetAct
+  - RandScore
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 0

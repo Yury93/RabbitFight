@@ -7,8 +7,10 @@ using UnityEngine.UI;
 public class PlayerUi : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject uIElements;
-    [SerializeField] private Text hpTxt, scoreTxt;
+    [SerializeField] private Text  scoreTxt;
     [SerializeField] private int score;
+    public int Score => score;
+    [SerializeField] private int scoreLvl;
     private Player player;
     private Destructible dest;
     void Start()
@@ -23,15 +25,23 @@ public class PlayerUi : MonoBehaviourPunCallbacks
             uIElements.SetActive(false);
         }
         dest = player.GetComponent<Destructible>();
-        hpTxt.text = dest.CurrentHp.ToString();
-        dest.OnDamageEvent(UpdateTxtHp);
-        scoreTxt.text = score.ToString();
+
+        scoreTxt.text = $"{score}/{scoreLvl}";
     }
-    public void UpdateTxtHp()
+    
+    
+    public void UpdateScore(int i)
     {
-        //if (player.ViewPlayer.IsMine)
-        //{
-            hpTxt.text = dest.CurrentHp.ToString();
-        //}
+        score+=i;
+        scoreTxt.text = $"{score}/{scoreLvl}";
+    }
+    public void SetScoreLvl(int i)
+    {
+        scoreLvl = i;
+    }
+    public void ScoreNull()
+    {
+        score = 0;
+        scoreTxt.text = $"{score}/{scoreLvl}";
     }
 }

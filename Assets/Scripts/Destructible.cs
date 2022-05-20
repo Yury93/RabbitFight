@@ -9,15 +9,20 @@ public class Destructible : MonoBehaviourPunCallbacks
     [SerializeField] private int currentHp;
     public int CurrentHp => currentHp;
     [SerializeField] private bool increadible;
+    public Action OnDamage;
 
-    public event Action OnDamage;
    
-    public void ApplyDamage(int damage)
+
+    public void ApplyDamage(int damage, GameObject go)
     {
         if (!increadible)
         {
+          var ani =  gameObject.GetComponent<PlayerAnimationController>();
+            ani.Damage();
             currentHp -= damage;
+           
             OnDamage?.Invoke();
+  
             if (currentHp <= 0)
             {
                 var viewPh = GetComponent<PhotonView>();
@@ -31,7 +36,7 @@ public class Destructible : MonoBehaviourPunCallbacks
     [PunRPC]
     public void RPC_DestroyGo()
     {
-        Destroy(gameObject);
+        Destroy(gameObject,0.5F);
     }
     public void SetIncreadible(bool incread)
     {
@@ -40,5 +45,12 @@ public class Destructible : MonoBehaviourPunCallbacks
     public void OnDamageEvent(Action damage)
     {
         OnDamage += damage;
+    }
+    public void SetHp()
+    {
+        if(currentHp != 30)
+        {
+            currentHp += 10;
+        }
     }
 }

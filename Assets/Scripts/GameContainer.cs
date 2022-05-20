@@ -11,4 +11,6 @@ public class GameContainer : SingletonBase<GameContainer>
     public Button ButtonAttack => buttonAttack;
     [SerializeField] private Button buttonSlope;
     public Button ButtonSlope => buttonSlope;
+    [SerializeField] private GameObject effectDeath;
+    public GameObject EffectDeath => effectDeath;
 }
