@@ -104,7 +104,7 @@ public class PlayerAnimationController : MonoBehaviourPunCallbacks
         StartCoroutine(CorReturnIdle());
         IEnumerator CorReturnIdle()
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.3f);
             animator.SetBool("Damage", false);
         }
     }
